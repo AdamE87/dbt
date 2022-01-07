@@ -4,7 +4,8 @@ with payments as(
         orderid as order_id,
         status,
         amount / 100 as amount,
-        created as created_at
+        created as created_at,
+        paymentmethod
     from 
         {{ source('stripe','payment')}}
 )
