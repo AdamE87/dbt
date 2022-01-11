@@ -3,7 +3,7 @@ with payments as(
         id as payment_id,
         orderid as order_id,
         status,
-        amount / 100 as amount,
+        {{ cents_to_dollars('amount') }} as amount,
         created as created_at,
         paymentmethod
     from 
